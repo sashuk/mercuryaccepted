@@ -1,0 +1,44 @@
+<?php
+/**
+*	bbs_calculator module
+*/
+
+
+/**
+*	Registering custom output for module
+*/
+function bbs_calculator_theme($existing, $type, $theme, $path) {
+	return array(
+		'calc' => array(
+			'template' => 'calc',
+			'path' => drupal_get_path('module', 'bbs_calculator') .'/theme',
+			'variables' => array('items' => NULL),
+		)
+	);
+}
+
+
+/**
+ * 	Implements hook_block_info().
+ */
+function bbs_calculator_block_info() {
+  $blocks['bbs_calculator'] = array(
+    // The name that will appear in the block list.
+    'info' => 'Calculator',
+    // Default setting.
+    'cache' => DRUPAL_CACHE_PER_ROLE,
+  );
+  return $blocks;
+}
+
+/**
+*	Render view
+*/
+function bbs_calculator_block_view($delta = '') {
+  switch ($delta) {
+    case 'bbs_calculator':
+      $block['subject'] = t('bbs_calculator');
+      $block['content'] = theme('calc', array('items' => array('NO CALCULATOR ADDED YET')));
+  }
+  return $block;
+}

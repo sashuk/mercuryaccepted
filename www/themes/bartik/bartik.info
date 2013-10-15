@@ -1,0 +1,51 @@
+
+name = Bartik
+description = A flexible, recolorable theme with many regions.
+package = Core
+version = VERSION
+core = 7.x
+
+; stylesheets[all][] = css/layout.css
+; stylesheets[all][] = css/style.css
+; stylesheets[all][] = css/colors.css
+; stylesheets[print][] = css/print.css
+
+stylesheets[print][] = css/common.css
+stylesheets[print][] = css/style.css
+
+; Front page regions
+regions[bbs_mainmenu] = BBS_mainmenu Main menu placing
+regions[fp_calculator_overall] = BBS_MAINPAGE_Big calculator
+regions[fp_shortnews] = BBS_MAINPAGE_Short news
+regions[fp_feedback] = BBS_MAINPAGE_Feedback
+regions[fp_production] = BBS_MAINPAGE_Production types
+regions[fp_aboutus] = BBS_MAINPAGE_Aboutus node
+
+regions[header] = Header
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[highlighted] = Highlighted
+
+regions[featured] = Featured
+regions[content] = Content
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+
+regions[triptych_first] = Triptych first
+regions[triptych_middle] = Triptych middle
+regions[triptych_last] = Triptych last
+
+regions[footer_firstcolumn] = Footer first column
+regions[footer_secondcolumn] = Footer second column
+regions[footer_thirdcolumn] = Footer third column
+regions[footer_fourthcolumn] = Footer fourth column
+regions[footer] = Footer
+
+settings[shortcut_module_link] = 0
+
+; Information added by drupal.org packaging script on 2013-08-08
+version = "7.23"
+project = "drupal"
+datestamp = "1375928238"
+

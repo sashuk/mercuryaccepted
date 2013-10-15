@@ -1,0 +1,90 @@
+<?php
+/**
+ * Implements hook_menu().
+ */
+function ajaxcallback_menu() {
+   $items = array();
+   
+  $items['ajax/callback'] = array(
+    'title' => 'Receive current form',
+    'page callback' => 'ajaxcallback_get_username',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['admin/settings/ajaxcallback'] = array(
+    'title' => 'Настройки модуля "Заявка"',
+    'description' => 'Настройки выполнения модуля "Заявка"',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ajaxcallback_admin'),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+   );
+  return $items;
+}
+
+
+/**
+ * AJAX function that returns the current logged in users name.
+ */
+function ajaxcallback_get_username() {
+	$to = variable_get(ajaxcallback_email, 'shumsan1011@gmail.com');
+	$headers = 'Content-type: text/html; From: info@lesvzime.ru' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+	$type = cleanInput($_GET['type']);
+
+	if ($type == 'CALLBACK') {
+		$phone = cleanInput($_GET['phone']);
+		$mail = filter_var($_GET['email'], FILTER_SANITIZE_EMAIL);
+		$name = cleanInput($_GET['name']);
+  
+		$body = '<b>Имя:</b> '.$name.'<br><b>Телефон:</b> '.$phone.'<br><b>Email:</b><a href="mailto:'.$mail.'">'.$mail.'</a>';
+		$subject = 'Новая "Заказать звонок" заявка с веб-сайта LESVZIME.RU';
+		mail($to, $subject, $body, $headers);
+	} else if ($type == 'WRITE_TO_US') {
+		$email = cleanInput($_GET['email']);
+		$message = cleanInput($_GET['message']);
+		$name = cleanInput($_GET['name']);
+  
+		$body = '<b>Имя:</b> '.$name.'<br><b>Email:</b> '.$email.'<br><b>Сообщение:</b>' . $message;
+		$subject = 'Новая "Написать нам" заявка с веб-сайта LESVZIME.RU';
+		mail($to, $subject, $body, $headers);
+	} else if ($type == 'ORDER') {
+		$email = cleanInput($_GET['email']);
+		$name = cleanInput($_GET['name']);
+		$phone = cleanInput($_GET['phone']);
+		$order = cleanInput($_GET['order']);
+		
+		$body = '<b>Имя:</b> '.$name.'<br><b>Телефон или email:</b> '.$email.' , '.$phone.'<br><b>Заказ:</b>' . $order;
+		$subject = 'Новая "Заказ" заявка с веб-сайта LESVZIME.RU';
+		mail($to, $subject, $body, $headers);
+	} else {
+		echo 'Wrong TYPE value';
+	}
+	
+	drupal_exit();
+}
+
+function cleanInput($input) {
+  $search = array(
+    '@<script[^>]*?>.*?</script>@si',
+    '@<[\/\!]*?[^<>]*?>@si',
+    '@<style[^>]*?>.*?</style>@siU',
+    '@<![\s\S]*?--[ \t\n\r]*>@'
+  );
+    $output = preg_replace($search, '', $input);
+    return $output;
+}
+
+function ajaxcallback_admin() {
+  $form = array();
+  $form['ajaxcallback_email'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Электронный адрес'),
+    '#default_value' => variable_get('ajaxcallback_email', 'admin@blackboxstudio.ru'),
+    '#size' => 64,
+    '#maxlength' => 64,
+    '#description' => t("Электронный почтовый адрес для посылки заявки"),
+    '#required' => TRUE,
+  );
+  return system_settings_form($form);
+}
+?>

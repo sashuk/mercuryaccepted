@@ -1,0 +1,11 @@
+name = Calculator (BBS)
+description = Calculation of product cost
+core = 7.x
+php = 5.2
+
+; Information added by drupal.org packaging script on 2012-08-13
+version = "7.x-2.6"
+core = "7.x"
+project = "bbs_calculator"
+datestamp = "1344850024"
+
