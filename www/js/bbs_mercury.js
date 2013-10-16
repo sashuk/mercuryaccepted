@@ -80,6 +80,11 @@ function addOrderToForm($order_text){
 }
 
 $(document).ready(function(){
+    /*$('.js_menu_hover_action').on('click', function(){
+        alert('asdasd');
+        $(this).trigger('hover');
+    });*/
+
     $('.headertop_callback').on('click', function(){
         $func_process_overlay(false);
 

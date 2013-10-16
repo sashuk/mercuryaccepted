@@ -8,7 +8,7 @@
                 if($tmp_counter == 3){
                     ?>
                     <div class="title_wrap">
-                        <span><?php echo $item['title']; ?></span><div class="submenu_arrow"></div>
+                        <span class="js_menu_hover_action" onclick=""><?php echo $item['title']; ?></span><div class="submenu_arrow"></div>
                         <div class="submenu">
                             <a href="/produkcija/radialnyj-raspil-drevesiny">Доска радиального распила</a>
                             <a href="/produkcija/cilindrovannyj-brus">Оцидиндрованное бревно</a>
@@ -18,7 +18,7 @@
                 } elseif($tmp_counter == 2) {
                     ?>
                     <div class="title_wrap">
-                        <span><?php echo $item['title']; ?></span><div class="submenu_arrow"></div>
+                        <span class="js_menu_hover_action" onclick=""><?php echo $item['title']; ?></span><div class="submenu_arrow"></div>
                         <div class="submenu">
                             <a href="/<?php echo drupal_get_path_alias('node/1'); ?>">О компании</a>
                             <!--<a href="/news_feedback">Новости & Отзывы</a>-->
