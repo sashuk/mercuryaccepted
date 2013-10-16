@@ -25,6 +25,7 @@
 
 * {
     position: relative;
+    zoom: 1;
 }
 a > * {
     border: none;
