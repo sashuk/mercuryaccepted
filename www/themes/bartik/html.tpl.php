@@ -48,9 +48,9 @@
 
 <head profile="<?php print $grddl_profile; ?>">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="icon" type="image/png" href="http://lesvzime.ru/images/favicon.png">
 	<title><?php print $head_title; ?></title>
-	
+
 	<?php print $head; ?>
 	<?php print $styles; ?>
 	<?php print $scripts; ?>
@@ -73,6 +73,7 @@
     <script type="text/javascript" src="/js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="/js/slider.js"></script>
     <script type="text/javascript" src="/js/bbs_mercury.js"></script>
+    <script type="text/javascript" src="/js/ajaxcallback.js"></script>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
     <div class="wrapper">
@@ -122,7 +123,7 @@
                             <br>
 
                             <span class="form_input_title">Осталось нажать...</span>
-                            <input class="form_submit" type="submit" value="ЗАКАЗАТЬ ЗВОНОК"/>
+                            <button class="form_submit" type="button">ЗАКАЗАТЬ ЗВОНОК</button>
                         </form>
                     </div>
 
@@ -148,7 +149,7 @@
                             <br>
 
                             <span class="form_input_title">Осталось нажать...</span>
-                            <input class="form_submit" type="submit" value="СДЕЛАТЬ ЗАКАЗ"/>
+                            <button class="form_submit" type="button">СДЕЛАТЬ ЗАКАЗ</button>
                         </form>
                     </div>
 
@@ -170,7 +171,7 @@
                             <br>
 
                             <span class="form_input_title">Осталось нажать...</span>
-                            <input class="form_submit" type="submit" value="ОТПРАВИТЬ"/>
+                            <button class="form_submit" type="button">ОТПРАВИТЬ</button>
                         </form>
                     </div>
                 </div>

@@ -111,7 +111,7 @@
 
             $('.ui_calculator_order').on('click', function(){
 
-                addOrderToForm('Оцилиндрованное бревно - ' + $price_diameter_text + ' - ' + $price_breed_text + ', объем :' + $count + ' м³, итого : ' + $price_total + ' Рублей');
+                addOrderToForm('Оцилиндрованное бревно - ' + $price_diameter_text + ' - ' + $price_breed_text + ', объем :' + $('[name="form_calculator_count"]').val() + ' м³, итого : ' + $price_total + ' Рублей');
             });
         </script>
     </div>
