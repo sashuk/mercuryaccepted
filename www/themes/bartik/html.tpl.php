@@ -123,7 +123,7 @@
                             <br>
 
                             <span class="form_input_title">Осталось нажать...</span>
-                            <button class="form_submit" type="button">ЗАКАЗАТЬ ЗВОНОК</button>
+                            <button typebut="callback" class="form_submit" type="button">ЗАКАЗАТЬ ЗВОНОК</button>
                         </form>
                     </div>
 
@@ -149,7 +149,7 @@
                             <br>
 
                             <span class="form_input_title">Осталось нажать...</span>
-                            <button class="form_submit" type="button">СДЕЛАТЬ ЗАКАЗ</button>
+                            <button typebut="order" class="form_submit" type="button">СДЕЛАТЬ ЗАКАЗ</button>
                         </form>
                     </div>
 
@@ -171,7 +171,7 @@
                             <br>
 
                             <span class="form_input_title">Осталось нажать...</span>
-                            <button class="form_submit" type="button">ОТПРАВИТЬ</button>
+                            <button typebut="write_to_us" class="form_submit" type="button">ОТПРАВИТЬ</button>
                         </form>
                     </div>
                 </div>
