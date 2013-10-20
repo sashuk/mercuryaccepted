@@ -13,7 +13,7 @@
                 <div class="block_icon_phone"></div>
                 <span class="block_phone top"><?php echo CLIENT_PHONE_PREFIX; ?> <span style="color: #ffffff;"><?php echo CLIENT_PHONE_BODY; ?></span></span>
                 <span class="block_phone"><?php echo CLIENT_PHONE_DUO_PREFIX; ?> <span style="color: #ffffff;"><?php echo CLIENT_PHONE_DUO_BODY; ?></span></span>
-                <span class="block_callback" onclick="func_front_click_callback();">пререзвоните мне</span>
+                <span class="block_callback" onclick="func_front_click_callback();">перезвоните мне</span>
             </div>
         </div>
     </div>
